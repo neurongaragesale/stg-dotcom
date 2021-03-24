@@ -1,0 +1,273 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "colors";
+
+/*
+ * Theme definitions
+ */
+
+$themes: (
+  light: (
+    backgroundColor: white,
+    footerBackground: white,
+    //navBackground: $gray-100,
+    navBackground:$java,
+    secondary: $gray-900,
+    textColor: $black,
+    firstName: $java,
+    lastName: $black,
+    linkHover: $concrete,
+    themeColor: $dark-blue,
+    heartColor: pink,
+    titleColor: $teal-blue,
+    hrefColor: $teal-blue,
+    github: $black,
+    linkedin: $linkedin-blue,
+    iconBackground: $white,
+    cardBackground: $white,
+    twitter: $twitter,
+    instagram: $instagram,
+    facebook: $facebook,
+    rss: $rss,
+    youtube: $youtube,
+    seriesHeaderBackground: $concrete,
+    seriesHeaderBackgroundLink: $black,
+    seriesHeaderBackgroundHoverLink: $black,
+    hrDivider: $java,
+  ),
+  dark: (
+    backgroundColor: #222,
+    footerBackground: #222,
+    secondary: $gray-100,
+    navBackground: $teal-blue,
+    //linkHover: $gray-200,
+    linkHover: $concrete,
+    textColor: $gray-300,
+    firstName: $gray-100,
+    lastName: $java,
+    titleColor: $white,
+    hrefColor: $java,
+    themeColor: $dark-red,
+    heartColor: red,
+    github: $black,
+    linkedin: $empire-red,
+    iconBackground: #222,
+    cardBackground: $dark-gray,
+    twitter: $twitter,
+    instagram: $instagram,
+    facebook: $facebook,
+    rss: $rss,
+    youtube: $youtube,
+    seriesHeaderBackground: $bombay,
+    seriesHeaderBackgroundLink: $black,
+    seriesHeaderBackgroundHoverLink: $black,
+    hrDivider: $java,
+  ),
+);
+
+/*
+ * Implementation of themes
+ */
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+/** CUSTOM THEMING BEGIN */
+
+.hometext{
+  @media only screen and (max-width: 780px) {
+    display:none;
+  }
+}
+
+.mobilehometext{
+  @media only screen and (min-width: 780px) {
+    display:none;
+  }
+}
+
+.first-name {
+  @include themify($themes) {
+    color: themed("firstName");
+  }
+}
+
+.last-name {
+  @include themify($themes) {
+    color: themed("lastName");
+  }
+}
+
+// header
+.navbar,
+.navbar div {
+  @include themify($themes) {
+    background: themed("navBackground");
+  }
+}
+
+.nav-links a {
+  @include themify($themes) {
+    color: themed("linkHover") !important;
+    &:hover {
+      text-decoration: underline themed("hrefColor") solid;
+    }
+  }
+}
+
+.footer {
+  @include themify($themes) {
+    background: themed("backgroundColor");
+  }
+}
+
+.heart {
+  @include themify($themes) {
+    color: themed("heartColor");
+  }
+}
+
+.watch-list-title {
+  @include themify($themes) {
+    color: themed("secondary");
+  }
+}
+
+.card-container {
+  @include themify($themes) {
+    width: 25rem;
+    height: 23rem;
+    text-decoration-color: themed("hrefColor");
+    & * {
+      background: themed("cardBackground");
+    }
+  }
+}
+
+.blog-filter {
+  @include themify($themes) {
+    & input {
+      color: themed("titleColor");
+      &:focus {
+        box-shadow: 0 0 0 1px rgba(themed("hrefColor"), 0.5);
+        border-color: rgba(themed("hrefColor"), 0.5);
+      }
+    }
+  }
+}
+
+.resume-tags {
+  @include themify($themes) {
+    background: themed("navBackground");
+  }
+}
+
+.icons:hover {
+  @include themify($themes) {
+    background: themed("iconBackground");
+    &.github {
+      color: themed("github");
+    }
+    &.linkedin {
+      color: themed("linkedin");
+    }
+    &.twitter{
+      color:themed("twitter");
+    }
+    &.instagram{
+      color:themed("instagram");
+    }
+    &.facebook{
+      color:themed("facebook");
+    }
+    &.rss{
+      color:themed("rss");
+    }
+    &.youtube{
+      color:themed("youtube");
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @include themify($themes) {
+    color: themed("titleColor");
+  }
+}
+
+div {
+  @include themify($themes) {
+    background: themed("backgroundColor");
+  }
+}
+
+p {
+  @include themify($themes) {
+    color: themed("textColor");
+  }
+}
+
+.seriesheader {
+  @include themify($themes) {
+    background-color: themed("seriesHeaderBackground");
+    width: 50%;
+    margin-left: 26%;
+    border-radius: 21px;
+    
+    a {
+      font-weight: 600;
+      color: themed("seriesHeaderBackgroundHoverLink") !important;
+      &:hover {
+        text-decoration: underline themed("seriesHeaderBackgroundLink") solid;
+      }
+    }
+  }
+}
+
+.card-text{
+  word-break: break-all;
+}
+
+.cookieFooterStyling{
+  @include themify($themes) {
+    background: themed("navBackground") !important;
+  }
+  div{
+    @include themify($themes) {
+      background: themed("navBackground") !important;
+    }
+  }
+}
+
+.blogSubTitle{
+  font-size: 15px;
+}
+
+.itemDivider{
+  @include themify($themes){
+    background-color:themed("hrDivider") !important;
+  }
+
+}

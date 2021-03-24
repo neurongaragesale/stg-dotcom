@@ -1,0 +1,7 @@
+ @font-face {
+  font-family: "Raleway Regular";
+  font-weight: 400;
+  font-style: normal;
+  src: url("./Raleway/Raleway-Regular.otf") format("otf");
+  font-display: swap;
+}
