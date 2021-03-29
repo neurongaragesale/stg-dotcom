@@ -2,7 +2,7 @@
   "name": "ngs-dotcom-phoenix",
   "private": true,
   "description": "A personal site built on the bare-bones starter for Gatsby",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",

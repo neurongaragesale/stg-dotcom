@@ -6,16 +6,25 @@ import SeriesHeader from "../components/SeriesHeader"
 
 import SEO from "../utils/seo"
 
-export default ({ title, excerpt, html, subTitle, series, seriesslug }) => (
+export default ({ title, excerpt, html, subTitle, series, seriesslug, inseries, ogimage, ogtype, seotags, summary}) => (
 
  
   <PageLayout>
-    <SEO title={title} description={excerpt} />
+    <SEO 
+      title={title} 
+      description={excerpt} 
+      image={ogimage}
+      ogtype={ogtype}
+      seotags={seotags}
+      summary={summary}
+
+      
+      />
     <Container className="text-center" fluid>
       <PageTitle title={title} />
       {subTitle}
 
-      {series != ""  && 
+      {inseries == "true"  && 
         <SeriesHeader series={series} seriesslug={seriesslug}/>
       }
 

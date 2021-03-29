@@ -32,13 +32,13 @@ export default ({ data }) => {
       <SEO title="About Me" />
       <PageTitle title="About Me" />
       <Container>
-        <Image
+{/*         <Image
           rounded
           width="140"
           height="140"
           src={`../../icons/luke-${toString()}.png`}
           alt={author}
-        />
+        /> */}
         <article className="w-75 m-auto pt-2 text-justify">
           <p className="text-center">
             {designations.map((attr, i) => (
@@ -48,70 +48,35 @@ export default ({ data }) => {
               </span>
             ))}
           </p>
-          <p className="i-5 mt-4 pt-2">
-            Hello there! My name is <b>{`${author}`}</b>. I am a&nbsp;
-            <a
-              href="https://www.dictionary.com/e/fictional-characters/padawan/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              padawan
-            </a>
-            &nbsp;
-            <b>{occupation}</b> discovering the ways of the code. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.
+          
+          <p className="mt-4 pt-2">
+          The best way to describe myself is interdisciplinary. 
           </p>
-          <p className="i-5">
-            In my spare time, Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat.
+
+          <p className="mt-4 pt-2">
+          I spend a lot of time as a software engineer, architect, and consultant where I deliver cool solutions to complex problems. I’m educated in Political Science and Philosophy, have spent time teaching kids debate as well as doing do political work on occasion.   
           </p>
-          <p className="i-5">
-            Check out my <Link to="/projects">projects</Link> to see what I've
-            been up to! Or check out my <Link to="/blog">blog</Link> to see
-            what's recently caught my eye!
+
+          <p className="mt-4 pt-2">
+          Personally, I’m obsessed with quite a few things including: 
           </p>
-        </article>
-        <article className="w-75 m-auto">
-          {unemployed && (
-            <>
-              <hr />
-              <p className="unemployed">
-                <small>
-                  I am <b>currently looking for new opportunities</b>! If you
-                  like what you <Link to="/resume">see</Link>, let's get
-                  in&nbsp;
-                  <a
-                    href="mailto:red.five@rebellion.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    touch
-                  </a>
-                  !
-                </small>
-              </p>
-            </>
-          )}
-          <hr />
-          <h5 className="watch-list-title pt-4">
-            Here are a couple of books from my reading list:
-          </h5>
-          <ul style={{ fontSize: "0.9rem", listStyle: "none" }}>{bookLinks}</ul>
-          <h5 className="watch-list-title pt-4">
-            Here are a couple of shows from my watch list:
-          </h5>
-          <ul style={{ fontSize: "0.9rem", listStyle: "none" }}>{showLinks}</ul>
-          <h5 className="watch-list-title pt-4">
-            Here are a couple of movies from my watch list:
-          </h5>
-          <p>
-            <i>...waaaay too many to list.</i>
+          <ul>
+            <li>Information architecture, search engines, and how technology integrates into human life  </li>
+            <li>The process of creation – art, music, software, you name it, there is something that fascinates me about the workflow </li>
+            <li>How language shapes our world </li>
+            <li>The rhetoric of politics and the phenomena of politics becoming a “team” sport  </li>
+          </ul>
+
+          <p className="mt-4 pt-2">
+          I also love Ludwig Wittgenstein, Albert Camus, and prefer classical over behavioral political science.  
           </p>
+
+          <p className="mt-4 pt-2">
+          I’m not sure what else there is to say, so feel free to reach out to me about any of the things I’m passionate about or to just ask a question.  
+          </p>
+
+
+          
         </article>
       </Container>
     </PageLayout>

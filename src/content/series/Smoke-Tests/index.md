@@ -3,6 +3,9 @@ title: "Smoke Tests"
 tags: ["Project", "Hello", "World", "Gatsby", "React", "GraphQL"]
 date: "2021-03-19"
 description: "Sample posts for smoke testing key features"
+# ###################### Metadata
+ogtype: "Blog"
+seotags: ["Politics","pete"]
 ---
 
 This is just a series of posts used for smoke testing key integration functionality and basic blog postings.  

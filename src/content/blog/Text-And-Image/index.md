@@ -4,9 +4,13 @@ tags: []
 description: "just text and image"
 author: "NeuronGarageSale"
 date: "2021-03-19"
-series: ""
-seriesslug: ""
-typora-root-url: ./
+# ###################### Metadata
+ogtype: "Blog"
+seotags: ["Csharp"]
+# ###################### Series Information
+inseries: "true"
+series: "Smoke Test"
+seriesslug: "Smoke-Tests"
 ---
 
 That they are endowed by their Creator with certain inalienable rights. For the men and women of Reverend Wright's generation, the memories of humiliation and doubt and fear have not gone away; nor has the anger and the bitterness of those years. We measure the strength of our economy not by the number of billionaires we have or the profits of the Fortune 500, but by whether someone with a good idea can take a risk and start a new business, or whether the waitress who lives on tips can take a day off to look after a sick kid without losing her job - an economy that honors the dignity of work.

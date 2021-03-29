@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import PostTemplate from "./post-template"
 import Badge from "react-bootstrap/Badge"
+import {Utils } from "../utils"
 
 const SubTitle = ({ tags }) => (
   <div className="mb-5">
@@ -15,12 +16,19 @@ const SubTitle = ({ tags }) => (
 
 export default ({ data }) => {
   const post = data.markdownRemark
+  const allFeaturedImages = data.allFile.edges || []
+const regex = /\/[blog].*\/|$/
+const featuredImageMap = Utils.getImageMap(allFeaturedImages, regex)
   return (
     <PostTemplate
       title={post.frontmatter.title}
       subTitle={<SubTitle tags={post.frontmatter.tags} />}
       excerpt={post.excerpt}
       html={post.html}
+      ogimage={featuredImageMap[post.fields.slug]}
+      ogtype={post.frontmatter.ogtype}
+      seotags={post.frontmatter.seotags}
+      summary={post.frontmatter.description}
     />
   )
 }
@@ -32,8 +40,32 @@ export const query = graphql`
       frontmatter {
         title
         tags
+        ogtype
+        seotags
+      }
+      fields {
+        slug
       }
       excerpt
+    }
+    allFile(
+      filter: {
+        extension: { eq: "jpg" }
+        relativePath: { regex: "/feature/" }
+        relativeDirectory: { regex: "/content/projects/" }
+      }
+    )
+    {
+      edges {
+        node {
+          childImageSharp {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+          relativePath
+        }
+      }
     }
   }
 `

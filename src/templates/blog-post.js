@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import PostTemplate from "./post-template"
+import {Utils } from "../utils"
 
 const SubTitle = ({ ttr, date, author }) => (
   <h5 className="blogSubTitle mb-5">
@@ -10,6 +11,9 @@ const SubTitle = ({ ttr, date, author }) => (
 
 export default ({ data }) => {
   const post = data.markdownRemark
+  const allFeaturedImages = data.allFile.edges || []
+  const regex = /\/[blog].*\/|$/
+  const featuredImageMap = Utils.getImageMap(allFeaturedImages, regex)
   return (
     <PostTemplate
       title={post.frontmatter.title}
@@ -24,6 +28,12 @@ export default ({ data }) => {
       html={post.html}
       series={post.frontmatter.series}
       seriesslug={post.frontmatter.seriesslug}
+      inseries={post.frontmatter.inseries}
+      ogimage={featuredImageMap[post.fields.slug]}
+      //ogimage={post.frontmatter.ogimage}
+      ogtype={post.frontmatter.ogtype}
+      seotags={post.frontmatter.seotags}
+      summary={post.frontmatter.description}
     />
   )
 }
@@ -38,9 +48,38 @@ export const query = graphql`
         date(formatString: "DD MMMM, YYYY")
         series
         seriesslug
+        inseries
+        ogtype
+        seotags
+        description
+
+      }
+      fields {
+        slug
       }
       excerpt
       timeToRead
     }
+    allFile(
+      filter: {
+        extension: { eq: "jpg" }
+        relativePath: { regex: "/feature/" }
+        relativeDirectory: { regex: "/content/blog/" }
+      }
+    )
+    {
+      edges {
+        node {
+          childImageSharp {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+          relativePath
+        }
+      }
+    }
+
+    
   }
 `
