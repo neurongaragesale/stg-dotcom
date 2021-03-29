@@ -5,13 +5,17 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ description, lang, meta, image: img, title, pathname }) => {
+//const SEO = ({ description, lang, meta, image: img, title, pathname }) => {
+  const SEO = ({ description, lang, meta, image: img, title, pathname, ogtype, seotags, summary }) => {
   const { site } = useStaticQuery(query)
 
-  const metaDescription = description || site.siteMetadata.description
-  const image = img && img.src ? `${site.siteMetadata.siteUrl}${img.src}` : null
+  const metaDescription = summary || site.siteMetadata.description
+  //const image = img && img.src ? `${site.siteMetadata.siteUrl}${img.src}` : null
+  const image = img && img.src ? `${site.siteMetadata.siteUrl}${img.src}` : `${site.siteMetadata.siteUrl}/icons/ogimage.jpg`
 
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
+
+  const keywords = seotags ? seotags.join(`,`) : site.siteMetadata.keywords.join(`,`)
 
   return (
     <Helmet
@@ -21,21 +25,27 @@ const SEO = ({ description, lang, meta, image: img, title, pathname }) => {
       link={canonical ? [{ rel: `canonical`, href: canonical }] : []}
       meta={[
         { name: `description`, content: metaDescription },
-        { name: `keywords`, content: site.siteMetadata.keywords.join(`,`) },
+        //{ name: `keywords`, content: site.siteMetadata.keywords.join(`,`) },
+        { name: `keywords`, keywords },
         { property: `og:title`, content: title },
         { property: `og:description`, content: metaDescription },
-        { property: `og:type`, content: `website` },
+        { property: `og:type`, content: ogtype },
         { name: `twitter:creator`, content: site.siteMetadata.author },
-        { name: `twitter:title`, content: `title` },
+        // { name: `twitter:title`, content: `title` },
+        { name: `twitter:title`, content: title },
         { name: `twitter:description`, content: metaDescription },
+        { property: "og:image", content: image },
+        { property: "twitter:image", content: image },
+
       ]
         .concat(
           img
             ? [
-                { property: "og:image", content: image },
+                //{ property: "og:image", content: image },
                 { property: "og:image:width", content: img.width },
                 { property: "og:image:height", content: img.height },
                 { name: "twitter:card", content: "summary_large_image" },
+
               ]
             : [{ name: "twitter:card", content: "summary" }]
         )

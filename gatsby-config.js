@@ -8,22 +8,22 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: `NeuronGarageSale`,
-    author: `NeuronGarageSale`,
+    author: `@NeuronSale`,
     firstName: `Neuron`,
     lastName: `GarageSale`,
-    description: `John Doe's personal site`,
+    description: `I do things, sometimes`,
     // todo: take out occupation once you hit the about page
     occupation: `Software Engineer`,
-    keywords: [`John`, `Doe`, `Personal`, `Blog`, `Resume`, `Projects`, `Work`],
+    keywords: [`Technology`, `Politics`, `Philosophy`, `#ActuallyAutistic`, `Autims`, `Projects`],
     siteUrl:
       process.env.URL || process.env.DEPLOY_URL || `http://localhost:8000`,
           // todo: take out occupation once you hit the about page
      unemployed: true,
     designations: [
-      `Coding Monkey`,
-      `Jedi Master`,
-      `Binary Sunset Enthusiast`,
-      `Moisture Farmer`,
+      `Technology`,
+      `Politics`,
+      `Philosophy`,
+      `#Actually Autistic`,
     ],
     readingList: [
       {
