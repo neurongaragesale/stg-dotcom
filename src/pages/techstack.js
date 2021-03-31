@@ -7,7 +7,7 @@ export default () => {
     <PageLayout>
       <PageTitle>Technology Stack</PageTitle>
       <Container>
-        <article className="w-75 m-auto pt-2 text-center">  
+        <article className="w-75 m-auto pt-2 text-left">  
         <p>This site uses the following:</p>
       <ul>
         <li>It's built on <a href="https://www.gatsbyjs.com/">GatsbyJS</a></li>

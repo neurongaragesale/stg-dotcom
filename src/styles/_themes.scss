@@ -239,6 +239,12 @@ p {
   }
 }
 
+li {
+  @include themify($themes) {
+    color: themed("textColor");
+  }
+}
+
 .seriesheader {
   @include themify($themes) {
 
