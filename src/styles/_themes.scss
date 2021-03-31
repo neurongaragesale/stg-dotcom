@@ -33,6 +33,11 @@ $themes: (
     seriesHeaderBackgroundLink: $black,
     seriesHeaderBackgroundHoverLink: $black,
     hrDivider: $java,
+    blockquoteBkg: $bombay,
+    //blockquoteBorderColor: #ccc,
+    blockquoteBorderColor: $java,
+    blockquoteContentColor:$java,
+    blockquoteFontColor: $white,
   ),
   dark: (
     backgroundColor: #222,
@@ -61,6 +66,11 @@ $themes: (
     seriesHeaderBackgroundLink: $black,
     seriesHeaderBackgroundHoverLink: $black,
     hrDivider: $java,
+    blockquoteBkg: $bombay,
+    blockquoteBorderColor: $teal-blue,
+    blockquoteContentColor:$teal-blue,
+    blockquoteFontColor: $black,
+
   ),
 );
 
@@ -231,10 +241,21 @@ p {
 
 .seriesheader {
   @include themify($themes) {
+
+    @media only screen and (max-width: 780px) {
+      width:100%;
+      margin-left: 0%;
+      padding: 1%;
+      border-radius: 21px;
+    }
+
+    @media only screen and (min-width: 780px) {
+      width: 50%;
+      margin-left: 26%;
+      border-radius: 21px;
+    }
     background-color: themed("seriesHeaderBackground");
-    width: 50%;
-    margin-left: 26%;
-    border-radius: 21px;
+
     
     a {
       font-weight: 600;
@@ -271,3 +292,54 @@ p {
   }
 
 }
+
+blockquote {
+
+  @include themify($themes){
+    background:themed("blockquoteBkg") !important;
+    border-left-color:themed("blockquoteBorderColor") !important;
+  }
+  border-left: 10px solid;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  @include themify($themes){
+    color:themed("blockquoteContentColor") !important;
+    border-left-color:themed("blockquoteBorderColor") !important;
+  }
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  @include themify($themes){
+    color:themed("blockquoteFontColor") !important;
+  }
+  display: inline;
+  font-size: 25px;
+   font-style: italic;
+}
+
+
+
+img.gatsby-remark-oembed-photo {
+  @media only screen and (max-width: 780px) {
+    width: 303px;
+    height: 303px;
+  }
+  
+}
+
+//iframe.embedVideo-iframe{
+  iframe.embedVideo-iframe{
+  @media only screen and (max-width: 780px) {
+    width: 325px  !important;
+    height: 200px !important;
+    margin-left: -6%  !important;
+  }
+}
+

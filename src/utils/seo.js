@@ -30,7 +30,7 @@ import { useStaticQuery, graphql } from "gatsby"
         { property: `og:title`, content: title },
         { property: `og:description`, content: metaDescription },
         { property: `og:type`, content: ogtype },
-        { name: `twitter:creator`, content: site.siteMetadata.author },
+        { name: `twitter:creator`, content: "@NeuronSale" },
         // { name: `twitter:title`, content: `title` },
         { name: `twitter:title`, content: title },
         { name: `twitter:description`, content: metaDescription },

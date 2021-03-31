@@ -1,8 +1,4 @@
 import React from "react"
-import Link from "react"
-import {Alert} from 'react-bootstrap/Alert'
-import { Jumbotron } from "react-bootstrap"
-import Container from "react-bootstrap/Container"
 
 export default ({ series, seriesslug }) => (
 
@@ -17,9 +13,3 @@ export default ({ series, seriesslug }) => (
 
 
   )
-//   thinking this
-//   background-color: grey;
-//   border-style: double;
-//   border-radius: 40px;
-//   border-color: blue;
-//   padding: 2px;
