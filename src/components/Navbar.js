@@ -3,7 +3,7 @@ import ThemeContext from "../utils/theme"
 import { Navbar, Nav, Form, Image } from "react-bootstrap"
 import { Link } from "gatsby"
 import "./Fontawesome.js"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 
 export default () => {
   const { dark, toggleDark, toString } = useContext(ThemeContext)

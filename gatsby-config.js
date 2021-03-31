@@ -8,56 +8,18 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: `NeuronGarageSale`,
-    author: `@NeuronSale`,
+    author: `NeuronGarageSale`,
     firstName: `Neuron`,
     lastName: `GarageSale`,
     description: `I do things, sometimes`,
-    // todo: take out occupation once you hit the about page
-    occupation: `Software Engineer`,
     keywords: [`Technology`, `Politics`, `Philosophy`, `#ActuallyAutistic`, `Autims`, `Projects`],
     siteUrl:
       process.env.URL || process.env.DEPLOY_URL || `http://localhost:8000`,
-          // todo: take out occupation once you hit the about page
-     unemployed: true,
     designations: [
       `Technology`,
       `Politics`,
       `Philosophy`,
       `#Actually Autistic`,
-    ],
-    readingList: [
-      {
-        title: `Sapiens: A Brief History of Humankind`,
-        author: `Yuval Noah Harari`,
-        link: `https://www.goodreads.com/book/show/23692271-sapiens`,
-      },
-      {
-        title: `Behave: The Biology of Humans at our Best and Worst`,
-        author: `Robert Sapolsky`,
-        link: `https://www.goodreads.com/book/show/31170723-behave`,
-      },
-      {
-        title: `The Gene: An Intimate History`,
-        author: `Siddhartha Mukeherjee`,
-        link: `https://www.goodreads.com/book/show/27276428-the-gene`,
-      },
-    ],
-    showsList: [
-      {
-        title: `Avatar: The Last Airbender`,
-        author: `Micheal DiMartino, Bryan Konietzko`,
-        link: `https://www.imdb.com/title/tt0417299/`,
-      },
-      {
-        title: `Love, Death & Robots`,
-        author: `Tim Miller`,
-        link: `https://www.imdb.com/title/tt9561862/`,
-      },
-      {
-        title: `Star Wars: The Clone Wars`,
-        author: `George Lucas, Dave Filoni`,
-        link: `https://www.imdb.com/title/tt0458290/`,
-      },
     ],
   },
   plugins: [
@@ -72,15 +34,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
-    //`gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `John Doe's Personal Site`,
-        short_name: `J.Doe`,
-        description: `This is my personal site.`,
+        name: `NeuronGarageSale`,
+        short_name: `NGS`,
+        description: `NeuronGarageSale does things here`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#fff`,
@@ -295,7 +256,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // replace "UA-XXXXXXXXX-X" with your own Tracking ID
-        trackingId: "UA-XXXXXXXXX-X",
+        trackingId: "UA-193473251-1",
       },
     },
     // end of Google Analytics
@@ -303,7 +264,7 @@ module.exports = {
       resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
         googleAnalytics: {
-          trackingId: 'UA-XXXXXXXXX-X', // leave empty if you want to disable the tracker
+          trackingId: 'UA-193473251-1', // leave empty if you want to disable the tracker
           cookieName: 'gatsby-gdpr-google-analytics', // default
           anonymize: true // default
         },

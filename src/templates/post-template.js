@@ -1,9 +1,7 @@
 import React from "react"
 import Container from "react-bootstrap/Container"
-import {Alert} from 'react-bootstrap/Alert'
 import { PageLayout, PageTitle,  } from "../components"
 import SeriesHeader from "../components/SeriesHeader"
-
 import SEO from "../utils/seo"
 
 export default ({ title, excerpt, html, subTitle, series, seriesslug, inseries, ogimage, ogtype, seotags, summary}) => (
@@ -24,14 +22,14 @@ export default ({ title, excerpt, html, subTitle, series, seriesslug, inseries, 
       <PageTitle title={title} />
       {subTitle}
 
-      {inseries == "true"  && 
+      {inseries === "true"  && 
         <SeriesHeader series={series} seriesslug={seriesslug}/>
       }
 
 
 
 
-      <Container className="text-justify">
+      <Container className="text-left">
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </Container>
     </Container>

@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import PostTemplate from "./post-template"
-import Badge from "react-bootstrap/Badge"
 import {Utils } from "../utils"
 
 /* const SubTitle = ({ tags }) => (

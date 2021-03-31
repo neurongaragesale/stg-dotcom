@@ -3,6 +3,32 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## [Unreleased] - yyy-nn-dd
+
+
+## [1.0.0 - RC3] - 2021-03-31
+### Added
+### Changed
+### Fixed
+- Fixed alignment on mobile text
+- Fixed styling on series header in mobile
+- Fixed mobile styling on gifs
+- Fixed mobile styling on youtube videos
+### Removed
+
+## [1.0.0 - RC2] - 2021-03-30
+### Added
+### Changed
+- Formated block quotes
+- Updated GA key
+### Fixed
+- Fixed ESLint warnings
+### Removed
+- Removed work folder
+- Removed unneeded stuff on gatsby-config.js
+- Removed workhistory component
+
+
 ## [1.0.0 - RC1] - 2021-03-28
 ### Added
 - added inseries metadata for better series support

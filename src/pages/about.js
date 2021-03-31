@@ -1,31 +1,20 @@
-import React, { useContext } from "react"
+//import React, { useContext } from "react"
+import React from "react"
 import { PageLayout, PageTitle } from "../components"
-import { Container, Image } from "react-bootstrap"
-import { Link, graphql } from "gatsby"
-import { ThemeContext, SEO } from "../utils"
+import { Container } from "react-bootstrap"
+import { graphql } from "gatsby"
+//import { ThemeContext, SEO } from "../utils"
+import { SEO } from "../utils"
 
 export default ({ data }) => {
-  const MediaLink = ({ title, author, link }) => (
-    <li key={title} style={{ color: "gray" }}>
-      <a rel="noopener noreferrer" href={link}>
-        {title}
-      </a>
-      &nbsp;-<i>{author}</i>
-    </li>
-  )
+
 
   const {
-    author,
-    occupation,
-    readingList,
-    showsList,
     designations,
-    unemployed,
   } = data.site.siteMetadata
-  const { toString } = useContext(ThemeContext)
+  //const { toString } = useContext(ThemeContext)
 
-  const bookLinks = readingList.map(book => MediaLink(book))
-  const showLinks = showsList.map(show => MediaLink(show))
+
 
   return (
     <PageLayout>
@@ -39,8 +28,8 @@ export default ({ data }) => {
           src={`../../icons/luke-${toString()}.png`}
           alt={author}
         /> */}
-        <article className="w-75 m-auto pt-2 text-justify">
-          <p className="text-center">
+        <article className="w-75 m-auto pt-2 text-left">
+          <p className="text-center personalTags">
             {designations.map((attr, i) => (
               <span key={attr}>
                 &nbsp;<b>{attr}</b>&nbsp;
@@ -71,6 +60,16 @@ export default ({ data }) => {
           I also love Ludwig Wittgenstein, Albert Camus, and prefer classical over behavioral political science.  
           </p>
 
+          <b>What's with the name NeuronGarageSale?</b>
+          <p>
+          The name initially came to me serendipitously when I was signing up for an online service back in the day, but I really liked it and it stuck.  It feels right because, as an information worker, IT architect, and consultant, I literally make money off renting out my neurons to solve other people’s problems. Often it is my hyperfocus that has made me successful.  So to the extend that manual labor trades your body for currency, I trade my mind for the same. I use it here for 2 reasons:  
+          </p>
+
+          <ul>
+            <li>Since I'm hitting multiple topics, it seems fitting</li>
+            <li>My name is often mispelled and not catchy</li>
+          </ul>
+
           <p className="mt-4 pt-2">
           I’m not sure what else there is to say, so feel free to reach out to me about any of the things I’m passionate about or to just ask a question.  
           </p>
@@ -87,20 +86,8 @@ export const query = graphql`
   query {
     site {
       siteMetadata {
-        unemployed
-        occupation
         author
         designations
-        readingList {
-          title
-          author
-          link
-        }
-        showsList {
-          title
-          author
-          link
-        }
       }
     }
   }

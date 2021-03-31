@@ -7,7 +7,7 @@ import { Container, Image } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export default ({ data }) => {
-  const { unemployed, firstName, lastName, occupation } = data.site.siteMetadata
+  const { firstName, lastName } = data.site.siteMetadata
   const { dark } = useContext(ThemeContext)
   return (
     <PageLayout>
