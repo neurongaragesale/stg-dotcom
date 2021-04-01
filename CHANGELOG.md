@@ -3,41 +3,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-## [Unreleased] - yyy-nn-dd
+## [Unreleased] - yyy-mm-dd
 
 
-## [1.0.0 - RC3] - 2021-03-31
+## [1.0.0] - 2021-03-31
 ### Added
+- added inseries metadata for better series support
+- Added enhanced frontmatter to provide more flexibality in OG tags and Series 
 ### Changed
+- Formated block quotes
+- Updated GA key
+- Updated About Page
+- Updated SEO to consume more from the post as opposed to defaulting to site defaults
 ### Fixed
 - Fixed alignment on mobile text
 - Fixed styling on series header in mobile
 - Fixed mobile styling on gifs
 - Fixed mobile styling on youtube videos
-### Removed
-
-## [1.0.0 - RC2] - 2021-03-30
-### Added
-### Changed
-- Formated block quotes
-- Updated GA key
-### Fixed
 - Fixed ESLint warnings
 ### Removed
 - Removed work folder
 - Removed unneeded stuff on gatsby-config.js
 - Removed workhistory component
-
-
-## [1.0.0 - RC1] - 2021-03-28
-### Added
-- added inseries metadata for better series support
-- Added enhanced frontmatter to provide more flexibality in OG tags and Series 
-### Changed
-- Updated About Page
-- Updated SEO to consume more from the post as opposed to defaulting to site defaults
-### Fixed
-### Removed
 
 ## [0.5.0] - 2021-03-23
 - Standardizing packaging as multiple sites are now online

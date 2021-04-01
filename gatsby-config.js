@@ -256,7 +256,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // replace "UA-XXXXXXXXX-X" with your own Tracking ID
-        trackingId: "UA-193473251-1",
+        trackingId: "UA-XXXXXXXXX-X",
       },
     },
     // end of Google Analytics
@@ -264,7 +264,7 @@ module.exports = {
       resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
         googleAnalytics: {
-          trackingId: 'UA-193473251-1', // leave empty if you want to disable the tracker
+          trackingId: "UA-XXXXXXXXX-X", // leave empty if you want to disable the tracker
           cookieName: 'gatsby-gdpr-google-analytics', // default
           anonymize: true // default
         },

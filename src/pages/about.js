@@ -49,7 +49,7 @@ export default ({ data }) => {
           <p className="mt-4 pt-2">
           Personally, I’m obsessed with quite a few things including: 
           </p>
-          <ul>
+          <ul ClassName="mt-4 pt-2">
             <li>Information architecture, search engines, and how technology integrates into human life  </li>
             <li>The process of creation – art, music, software, you name it, there is something that fascinates me about the workflow </li>
             <li>How language shapes our world </li>
@@ -60,7 +60,7 @@ export default ({ data }) => {
           I also love Ludwig Wittgenstein, Albert Camus, and prefer classical over behavioral political science.  
           </p>
 
-          <b>What's with the name NeuronGarageSale?</b>
+          <h2>What's with the name NeuronGarageSale?</h2>
           <p>
           The name initially came to me serendipitously when I was signing up for an online service back in the day, but I really liked it and it stuck.  It feels right because, as an information worker, IT architect, and consultant, I literally make money off renting out my neurons to solve other people’s problems. Often it is my hyperfocus that has made me successful.  So to the extend that manual labor trades your body for currency, I trade my mind for the same. I use it here for 2 reasons:  
           </p>
