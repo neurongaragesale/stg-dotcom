@@ -61,7 +61,7 @@ How this is solved with Aliases?
 
 Simply put, aliases take the responsibility of pointing to the right index away from consumers. If it helps, think about it like a DNS entry vs hostname or IP. Look at the image below for a visualization. 
 
-![Example showing the difference between using an alias and not](.\AliasAbstractionEx.png)
+![Example showing the difference between using an alias and not](AliasAbstractionEx.png)
 
 
 
@@ -75,7 +75,7 @@ Let’s say you run a store which sells comic books and trading cards. I want my
 
 To do this, you would take the available fields from both data sources, push similar fields into a single search index field, and for those specifically unique in a data source, just add them too – knowing they’ll always be null for the data source it’s not found in. As you can see in the image below, my unified schema has a bunch of fields that will only have information in one source or another (i.e. DiamondId for comics, CardNumber for cards) and I’ve genericized comic cover variants and card parallels into a single field. 
 
-![Example of a unified schema for comics and trading cards](.\unifiedschema.png)
+![Example of a unified schema for comics and trading cards](unifiedschema.png)
 
 
 
@@ -83,7 +83,7 @@ To do this, you would take the available fields from both data sources, push sim
 
 To do this, you take each of your data sources (comics & cards) and build out their own schemas. If there are common fields (such as SearchDescription and price) just make sure their names are the same. Look at the image below. You’ll see there are no generic fields, and each index is closely resembling the source system. 
 
-![Example showing a comic index and trading card index merged together by an alias](.\multiindex.png)
+![Example showing a comic index and trading card index merged together by an alias](multiindex.png)
 
 **Let’s review these options**
 
@@ -100,7 +100,7 @@ Option 2 is much easier
 2. Nullness actually means something as each product is in an index with fields specific to its type
 3. Scaling new products is easy. Want funko pops? Create your schema with the Common Schema fields included, load your products, wait for those slow front end devs to finish updates, then add the index to the alias… easy peasy lemon squeezy
 
-![Example of option 2 with expansion for funko pop](.\FunkoExpansion.png)
+![Example of option 2 with expansion for funko pop](FunkoExpansion.png)
 
 However, in order to get option 2 to work, and merge multiple index results into the same result set, you must have an alias. 
 
@@ -120,7 +120,7 @@ If you’ve broken down your components into individual indexes with aliases on 
 
 Without aliases it’ll require you to either spin up a second index just for your mobile parts app, or force the mobile app to always query with a filter for only parts (and possibly exposing your internal only bill of materials to the world). 
 
-![Diagram showing how an alias architecture can provide extra usage to an existing index](.\multiappalias.png)
+![Diagram showing how an alias architecture can provide extra usage to an existing index](multiappalias.png)
 
 
 
